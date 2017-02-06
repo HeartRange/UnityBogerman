@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "escape game bogerman.Plugins", "escape game bogerman.Plugins.csproj", "{82152A5C-85B6-5693-4AD8-352F117EDDEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "escape game bogerman.Editor.Plugins", "escape game bogerman.Editor.Plugins.csproj", "{E55D44F3-3B81-978C-10DE-E641A056A7B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82152A5C-85B6-5693-4AD8-352F117EDDEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82152A5C-85B6-5693-4AD8-352F117EDDEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82152A5C-85B6-5693-4AD8-352F117EDDEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82152A5C-85B6-5693-4AD8-352F117EDDEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E55D44F3-3B81-978C-10DE-E641A056A7B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E55D44F3-3B81-978C-10DE-E641A056A7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E55D44F3-3B81-978C-10DE-E641A056A7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E55D44F3-3B81-978C-10DE-E641A056A7B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

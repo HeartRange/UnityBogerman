@@ -1,9 +1,11 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "escape game bogerman", "Assembly-CSharp-firstpass.csproj", "{C10203CB-A3B1-AB7B-99C9-C992D7FFF61F}"
+# Visual Studio 2008
+
+Project("{CBE330AE-0FBB-36FF-298A-77790CFAB032}") = "escape game bogerman", "Assembly-CSharp-firstpass.csproj", "{C10203CB-A3B1-AB7B-99C9-C992D7FFF61F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "escape game bogerman", "Assembly-CSharp-Editor-firstpass.csproj", "{C926DE06-340A-95DD-18C7-C53E9E28CB00}"
+Project("{CBE330AE-0FBB-36FF-298A-77790CFAB032}") = "escape game bogerman", "Assembly-CSharp.csproj", "{C226DD20-CFBA-C2C5-07BA-C1F84C22D6D2}"
+EndProject
+Project("{CBE330AE-0FBB-36FF-298A-77790CFAB032}") = "escape game bogerman", "Assembly-CSharp-Editor-firstpass.csproj", "{C926DE06-340A-95DD-18C7-C53E9E28CB00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C10203CB-A3B1-AB7B-99C9-C992D7FFF61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C10203CB-A3B1-AB7B-99C9-C992D7FFF61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C10203CB-A3B1-AB7B-99C9-C992D7FFF61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C226DD20-CFBA-C2C5-07BA-C1F84C22D6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C226DD20-CFBA-C2C5-07BA-C1F84C22D6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C226DD20-CFBA-C2C5-07BA-C1F84C22D6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C226DD20-CFBA-C2C5-07BA-C1F84C22D6D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C926DE06-340A-95DD-18C7-C53E9E28CB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C926DE06-340A-95DD-18C7-C53E9E28CB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C926DE06-340A-95DD-18C7-C53E9E28CB00}.Release|Any CPU.ActiveCfg = Release|Any CPU

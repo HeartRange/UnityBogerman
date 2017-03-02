@@ -46,9 +46,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Aanzetbaar.cs" />
-     <Compile Include="Assets\DiaProjector.cs" />
-     <Compile Include="Assets\Pickupable.cs" />
+     <Compile Include="Assets\Scriptss\Aanzetbaar.cs" />
+     <Compile Include="Assets\Scriptss\DiaProjector.cs" />
+     <Compile Include="Assets\Scriptss\Objectives.cs" />
+     <Compile Include="Assets\Scriptss\Pickupable.cs" />
+     <Compile Include="Assets\Scriptss\PlayMovieOnE.cs" />
+     <Compile Include="Assets\Scriptss\TextBoxManager.cs" />
+     <Compile Include="Assets\Scriptss\TextImporter.cs" />
+     <Compile Include="Assets\Scriptss\opendoor.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
@@ -78,6 +83,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\Tekst\Intro.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />

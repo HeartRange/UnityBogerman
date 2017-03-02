@@ -3,14 +3,16 @@ using System.Collections;
 
 public class PickupObject : MonoBehaviour {
 	GameObject mainCamera;
-	bool carrying;
+	public bool carrying;
 	GameObject carriedObject;
 	public float distance;
 	public float smooth;
+	public bool throwed;
 	public float throwForce = 1000;
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.FindWithTag("MainCamera");
+		throwed = false;
 	}
 
 	// Update is called once per frame
@@ -60,6 +62,8 @@ public class PickupObject : MonoBehaviour {
 	void checkThrow(){
 		if (Input.GetMouseButtonDown (1)) {
 			throwObject ();
+			throwed = true;
+
 		}
 	}
 	void dropObject() {

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/informaticalokaal.unity
+- path: Assets/natuurkundelokaal.unity
   isLoaded: 1
   isActive: 1

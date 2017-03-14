@@ -5,7 +5,7 @@
       <File FileName="Assets\Standard Assets\Utility\PickupObject.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Utility\Pickupable.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scriptss\TextImporter.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scriptss\TextImporter.cs" Line="1" Column="1" />
       <File FileName="Assets\Tekst\Intro.txt" Line="4" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>

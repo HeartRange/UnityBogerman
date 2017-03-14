@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
+    public string telepad = "";
+
 
     IEnumerator OnTriggerEnter(Collider other)
     {
@@ -15,14 +17,14 @@ public class Teleport : MonoBehaviour
                 someGlobals.trig = true;
                 GetComponent<AudioSource>().Play();
                 yield return new WaitForSeconds(2 / 3);
-                other.transform.position = new Vector3(24, 5, 32);
+                other.transform.position = GameObject.Find(telepad).transform.position;
             }
         }
     }
 
     IEnumerator OnTriggerExit(Collider other)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         someGlobals.trig = false;
     }
 }

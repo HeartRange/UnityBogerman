@@ -8,8 +8,10 @@ public class opendoor : MonoBehaviour
     public string handle = "handleTestdoor";
     public bool open = false;
     public float degreeOpen = 90;
+    public AudioClip openSound;
+    public AudioClip closeSound;
     private Quaternion angle;
-    public float smooth = 1f;
+    private float smooth = 1f;
     private Quaternion angleDoor;
     private Quaternion angleHandle;
     private bool busy = false;
@@ -32,10 +34,19 @@ public class opendoor : MonoBehaviour
             open = !open;
             GameObject.Find(handle).transform.rotation = Quaternion.Slerp(GameObject.Find(handle).transform.rotation, angleHandle * Quaternion.Euler(0, 45, 0), 300 * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
-            
-            GetComponent<AudioSource>().Play();
-            yield return new WaitForSeconds(1);
-            GetComponent<AudioSource>().Stop();
+
+            if (open == true)
+            {
+                AudioSource.PlayClipAtPoint(openSound, transform.position);
+                yield return new WaitForSeconds(0.5f);
+                GetComponent<AudioSource>().Stop();
+            }
+            if (open == false)
+            {
+                AudioSource.PlayClipAtPoint(closeSound, transform.position);
+                yield return new WaitForSeconds(0.5f);
+                GetComponent<AudioSource>().Stop();
+            }
             busy = false;
             
 

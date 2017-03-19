@@ -15,7 +15,7 @@ public class opendoor : MonoBehaviour
     private Quaternion angleDoor;
     private Quaternion angleHandle;
     private bool busy = false;
-
+	public bool key;
     private void Start()
     {
         angleDoor = GameObject.Find(door).transform.rotation;
@@ -26,7 +26,8 @@ public class opendoor : MonoBehaviour
 
     private IEnumerator OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E) && busy == false)
+		key = GameObject.Find ("FirstPersonCharacter").GetComponent<someGlobals> ().gotkey;
+		if (Input.GetKeyDown(KeyCode.E) && busy == false && key == true)
         {
             busy = true;
             GameObject.Find(handle).transform.rotation = Quaternion.Slerp(GameObject.Find(handle).transform.rotation, angleHandle * Quaternion.Euler(0, -45, 0), 300 * Time.deltaTime);

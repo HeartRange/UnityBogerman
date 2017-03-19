@@ -2,5 +2,7 @@ Hallo! Ik ben Piteri de helper!
 Beweeg met WASD
 Voer acties uit met E
 Gooi items met de rechtermuisknop
-Goed gedaan! Zet nu de projector aan, wil je? :^)
-Vind je weg uit het lokaal :^)
+Goed gedaan! Zet nu de projector aan
+Vind de sleutel en ESCAPE! :^)
+Goed gedaan, nu alleen nog maar door die deur...
+Wow wat was dat

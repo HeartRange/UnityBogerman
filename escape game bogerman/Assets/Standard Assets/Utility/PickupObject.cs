@@ -45,9 +45,9 @@ public class PickupObject : MonoBehaviour {
 			if(Physics.Raycast(ray, out hit, 5)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
 				if(p != null) {
+					Debug.Log ("test");
 					carrying = true;
-					carriedObject = p.gameObject;
-					//p.gameObject.rigidbody.isKinematic = true;
+					carriedObject = p.gameObject;;
 					p.gameObject.GetComponent<Rigidbody>().useGravity = false;
 				}
 			}
@@ -68,13 +68,11 @@ public class PickupObject : MonoBehaviour {
 	}
 	void dropObject() {
 		carrying = false;
-		carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 		carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
 		carriedObject = null;
 	}
 	void throwObject() {
 		carrying = false;
-		carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 		carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
 		carriedObject.gameObject.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward*throwForce);
 	}

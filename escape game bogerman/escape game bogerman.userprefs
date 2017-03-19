@@ -1,12 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Tekst\Intro.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scriptss\TextBoxManager.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Utility\PickupObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Utility\Pickupable.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scriptss\TextImporter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Tekst\Intro.txt" Line="4" Column="27" />
+      <File FileName="Assets\Scriptss\PlayMovieOnE.cs" Line="77" Column="28" />
+      <File FileName="Assets\Scriptss\Switch.cs" Line="22" Column="9" />
+      <File FileName="Assets\Scriptss\Pickup.cs" Line="68" Column="5" />
+      <File FileName="Assets\Audio.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scriptss\DiaProjector.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scriptss\Objectives.cs" Line="33" Column="16" />
+      <File FileName="Assets\Scriptss\Switch1.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scriptss\Trigger.cs" Line="50" Column="26" />
+      <File FileName="Assets\van Ramon\opendoor.cs" Line="29" Column="70" />
+      <File FileName="Assets\Tekst\Intro.txt" Line="8" Column="16" />
+      <File FileName="Assets\van Ramon\someGlobals.cs" Line="10" Column="29" />
+      <File FileName="Assets\Scriptss\TextBoxManager.cs" Line="16" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

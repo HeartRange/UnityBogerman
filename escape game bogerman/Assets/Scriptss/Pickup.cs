@@ -11,6 +11,7 @@ public class Pickup : MonoBehaviour {
 	public float throwForce = 1000;
 	public GameObject PakOp;
 	public GameObject keyUI;
+	public int i;
 	// Use this for initialization
 	void Start () {
 		keyUI = GameObject.Find ("keyUI");
@@ -19,6 +20,7 @@ public class Pickup : MonoBehaviour {
 		throwed = false;
 		PakOp = GameObject.Find ("PakOp");
 		PakOp.SetActive (false);
+		i = 0;
 	}
 
 	// Update is called once per frame
@@ -61,9 +63,15 @@ public class Pickup : MonoBehaviour {
 			} else if (q != null) {
 				keyUI.SetActive (true);
 				PakOp.SetActive (false);
-				if (Input.GetKeyDown (KeyCode.E)) {
+				if (Input.GetKeyDown (KeyCode.E) && i == 0) {
 					GetComponent<someGlobals> ().gotkey = true;
 					Destroy (GameObject.Find ("Key"));
+					i++;
+				}
+				else if (Input.GetKeyDown (KeyCode.E) && i > 0) {
+					GetComponent<someGlobals> ().gotkey2 = true;
+					Destroy (GameObject.Find ("Key2"));
+					i++;
 				}
 			}
 		}

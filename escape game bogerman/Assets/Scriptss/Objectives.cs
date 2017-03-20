@@ -12,8 +12,11 @@ public class Objectives : MonoBehaviour {
 	public bool obj5;
 	public bool obj6;
 	public bool obj7;
+	public bool obj8;
+	public bool obj9;
+	public bool obj10;
 	public int obj1Int;
-
+	public float deltatime;
 	// Use this for initialization
 	void Start () {
 		obj1 = false;
@@ -23,6 +26,9 @@ public class Objectives : MonoBehaviour {
 		obj5 = false;
 		obj6 = false;
 		obj7 = false;
+		obj8 = false;
+		obj9 = false;
+		obj10 = false;
 	}
 	
 	// Update is called once per frame
@@ -48,10 +54,22 @@ public class Objectives : MonoBehaviour {
 		} else if (obj5 == true && obj6 == false && GameObject.Find ("FirstPersonCharacter").GetComponent<someGlobals> ().gotkey == true) {
 			obj6 = true;
 			GameObject.Find ("TextBoxManager").GetComponent<TextBoxManager> ().currentLine = 6;
-		} else if (obj6 == true && obj7 == false && GameObject.Find ("MyTrigger").GetComponent<Trigger> ().startTime == true) {
-			obj7 = true;
+		} else if (obj6 == true && obj7 == false && GameObject.Find ("MyTrigger").GetComponent<Trigger> ().textline == true) {
 			GameObject.Find ("TextBoxManager").GetComponent<TextBoxManager> ().currentLine = 7;
+			deltatime += Time.deltaTime; 
+		} else if (obj7 == true && obj8 == false && deltatime > 5f) {
+			obj7 = true;
+			obj8 = true;
+			GameObject.Find ("TextBoxManager").GetComponent<TextBoxManager> ().currentLine = 8;
+		} else if (obj8 == true && obj9 == false && GameObject.Find ("FirstPersonCharacter").GetComponent<someGlobals>().gotkey2 == true) {
+			obj7 = true;
+			GameObject.Find ("TextBoxManager").GetComponent<TextBoxManager> ().currentLine = 9;
+		} else if (obj9 == true && obj10 == false && GameObject.Find ("MyTrigger").GetComponent<Trigger> ().startTime == true) {
+			obj7 = true;
+			GameObject.Find ("TextBoxManager").GetComponent<TextBoxManager> ().currentLine = 10;
 		}
+
+
 			
 	}
 }

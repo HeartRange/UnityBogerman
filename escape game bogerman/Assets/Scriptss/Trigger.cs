@@ -19,12 +19,14 @@ public class Trigger : MonoBehaviour {
 	public GameObject teleporter;
 	public bool startTime2;
 	public bool startTime3;
+	public bool textline;
 	void OnTriggerEnter(Collider other)
 	{
 		anim = GameObject.Find ("BearGryllz").GetComponent<Animator> ();
 		Beerman = GameObject.Find ("BearGryllz").GetComponent<AudioSource> ();
 		startTime2 = true;
 		startTime3 = true;
+		textline = false;
 
 		if (other.gameObject.tag == "Player") {
 			anim.SetBool ("CheckDoor", true);
@@ -32,9 +34,9 @@ public class Trigger : MonoBehaviour {
 			AudioSource.PlayClipAtPoint (RipMuziek, transform.position, 0.1f);
 			GameObject.Find ("FPSController").GetComponent<FirstPersonController> ().enabled = false;
 			startTime = true;
-			totaltime = 5f;
-			halftime = 6.5f;
-			secondtime = 8f;
+			totaltime = 4.5f;
+			halftime = 5f;
+			secondtime = 5.2f;
 			GameObject.Find ("Dak").GetComponent<AudioSource> ().volume = 0.05f;
 			Beerman.Play ();
 		}
@@ -58,6 +60,7 @@ public class Trigger : MonoBehaviour {
 			if (timer > secondtime) {
 				GameObject.Find ("FPSController").GetComponent<FirstPersonController> ().enabled = true;
 				startTime = false;
+				textline = true;
 			}
 		}
 	}

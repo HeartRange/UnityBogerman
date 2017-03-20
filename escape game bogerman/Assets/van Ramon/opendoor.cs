@@ -16,10 +16,15 @@ public class opendoor : MonoBehaviour
     private Quaternion angleHandle;
     private bool busy = false;
 	public bool key;
+	public bool key2;
+	public int i;
+	public bool textline;
     private void Start()
     {
         angleDoor = GameObject.Find(door).transform.rotation;
         angle = Quaternion.Euler(0, degreeOpen, 0);
+		i = 0;
+		textline = false;
         
     }
 
@@ -27,8 +32,10 @@ public class opendoor : MonoBehaviour
     private IEnumerator OnTriggerStay(Collider other)
     {
 		key = GameObject.Find ("FirstPersonCharacter").GetComponent<someGlobals> ().gotkey;
-		if (Input.GetKeyDown(KeyCode.E) && busy == false && key == true)
+		key2 = GameObject.Find ("FirstPersonCharacter").GetComponent<someGlobals> ().gotkey2;
+		if (Input.GetKeyDown(KeyCode.E) && busy == false && key == true && i == 0)
         {
+			i++;
             busy = true;
             GameObject.Find(handle).transform.rotation = Quaternion.Slerp(GameObject.Find(handle).transform.rotation, angleHandle * Quaternion.Euler(0, -45, 0), 300 * Time.deltaTime);
             yield return new WaitForSeconds(0.4f);
@@ -52,6 +59,33 @@ public class opendoor : MonoBehaviour
             
 
         }
+		else if (Input.GetKeyDown(KeyCode.E) && busy == false && key2 == true && i > 0)
+		{
+			i++;
+			textline = true;
+			busy = true;
+			GameObject.Find(handle).transform.rotation = Quaternion.Slerp(GameObject.Find(handle).transform.rotation, angleHandle * Quaternion.Euler(0, -45, 0), 300 * Time.deltaTime);
+			yield return new WaitForSeconds(0.4f);
+			open = !open;
+			GameObject.Find(handle).transform.rotation = Quaternion.Slerp(GameObject.Find(handle).transform.rotation, angleHandle * Quaternion.Euler(0, 45, 0), 300 * Time.deltaTime);
+			yield return new WaitForSeconds(Time.deltaTime);
+
+			if (open == true)
+			{
+				AudioSource.PlayClipAtPoint(openSound, transform.position);
+				yield return new WaitForSeconds(0.5f);
+				GetComponent<AudioSource>().Stop();
+			}
+			if (open == false)
+			{
+				AudioSource.PlayClipAtPoint(closeSound, transform.position);
+				yield return new WaitForSeconds(0.5f);
+				GetComponent<AudioSource>().Stop();
+			}
+			busy = false;
+
+
+		}
         //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10 * smooth * Time.deltaTime);
 
     }

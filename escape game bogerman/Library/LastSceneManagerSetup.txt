@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/natuurkundelokaal.unity
-  isLoaded: 1
-  isActive: 1

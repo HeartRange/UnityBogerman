@@ -20,6 +20,8 @@ public class PlayMovieOnE : MonoBehaviour {
 	GameObject Canvas;
 	GameObject[] light;
 	public Behaviour halo;
+    public GameObject TextTest;
+    public bool UITime;
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.FindWithTag("MainCamera");
@@ -38,6 +40,8 @@ public class PlayMovieOnE : MonoBehaviour {
 		diaUI = GameObject.Find ("diaUI");
 		diaUI.SetActive (false);
 		light = GameObject.FindGameObjectsWithTag ("Lighting");
+        TextTest = GameObject.Find("TextTest");
+        UITime = false;
 
 	}
 
@@ -59,7 +63,9 @@ public class PlayMovieOnE : MonoBehaviour {
 			if(Physics.Raycast(ray, out hit, 3)) {
 				Aanzetbaar p = hit.collider.GetComponent<Aanzetbaar>();
 				if(p != null) {
-					diaUI.SetActive(true);
+                UITime = true;
+                TextTest.GetComponent<Animator>().SetBool("fadeStatus", true);
+                diaUI.SetActive(true);
 					if(Input.GetKeyDown (KeyCode.E)) {
 					Aan = true;
 					movie.Play();
@@ -81,9 +87,14 @@ public class PlayMovieOnE : MonoBehaviour {
 				}
 			}
 			else{
-				diaUI.SetActive(false);
-			}
-		}
+                if (UITime == true)
+                {
+                    TextTest.GetComponent<Animator>().SetBool("fadeStatus", false);
+                    diaUI.SetActive(false);
+                    UITime = false;
+                }
+            }
+        }
 	}
 
 	void zetUit() {
@@ -110,8 +121,6 @@ public class PlayMovieOnE : MonoBehaviour {
 						lights.GetComponent<Light>().intensity = 2.7f;
 
 					}
-
-
 				}
 			}
 		}

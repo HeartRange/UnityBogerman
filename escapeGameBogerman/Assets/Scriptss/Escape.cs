@@ -27,14 +27,14 @@ public class Escape : MonoBehaviour {
         {
             buttons.SetActive(true);
             checkKey = true;
-            GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = false;
+            GameObject.Find("FirstPersonCharacter").GetComponent<Camera>().enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
             checkKey = false;
             buttons.SetActive(false);
             optionsPanel.SetActive(false);
-            GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = true;
+            GameObject.Find("FirstPersonCharacter").GetComponent<Camera>().enabled = true;
         }
 	}
 
@@ -49,4 +49,5 @@ public class Escape : MonoBehaviour {
             Cursor.visible = true;
         }
     }
+
 }

@@ -20,6 +20,7 @@ public class Trigger : MonoBehaviour {
 	public bool startTime2;
 	public bool startTime3;
 	public bool textline;
+    public GameObject UICanvas;
 
 
 	void OnTriggerEnter(Collider other)
@@ -32,9 +33,9 @@ public class Trigger : MonoBehaviour {
 
 		if (other.gameObject.tag == "Player") {
 			anim.SetBool ("CheckDoor", true);
-            FirstPersonCharacter.GetComponent<Fading>().fadespeed = 0.05f;
+            FirstPersonCharacter.GetComponent<Fading>().fadespeed = 0.1f;
             FirstPersonCharacter.GetComponent<Fading>().BeginFade(1);
-			AudioSource.PlayClipAtPoint (RipMuziek, transform.position, 0.5f);
+			AudioSource.PlayClipAtPoint (RipMuziek, transform.position, 0.8f);
 			GameObject.Find ("FPSController").GetComponent<FirstPersonController> ().enabled = false;
 			startTime = true;
 			totaltime = 4.5f;
@@ -42,6 +43,7 @@ public class Trigger : MonoBehaviour {
 			secondtime = 6.1f;
 			GameObject.Find ("Dak").GetComponent<AudioSource> ().volume = 0.1f;
 			Beerman.Play ();
+            UICanvas.SetActive(false);
 		}
 			
 	}
@@ -50,8 +52,7 @@ public class Trigger : MonoBehaviour {
 		if (startTime == true) {
 			timer += Time.deltaTime;
 			if (timer > totaltime && startTime2 == true && startTime3 == true) {
-				FirstPersonCharacter.GetComponent<Fading> ().fadespeed = 0.1f;
-				FirstPersonCharacter.GetComponent<Fading> ().BeginFade (-1);
+				FirstPersonCharacter.GetComponent<Fading> ().fadespeed = 0.05f;
 				GameObject.Find ("Dak").GetComponent<AudioSource> ().volume = 0.1f;
 				AudioSource.PlayClipAtPoint (Au, transform.position, 1f);
 				startTime2 = false;
@@ -61,7 +62,9 @@ public class Trigger : MonoBehaviour {
 				teleporter.SetActive (true);
 			}
 			if (timer > secondtime) {
-				GameObject.Find ("FPSController").GetComponent<FirstPersonController> ().enabled = true;
+                FirstPersonCharacter.GetComponent<Fading>().BeginFade(-1);
+                GameObject.Find ("FPSController").GetComponent<FirstPersonController> ().enabled = true;
+                UICanvas.SetActive(true);
 				startTime = false;
 				textline = true;
 			}
@@ -70,6 +73,7 @@ public class Trigger : MonoBehaviour {
 	void Start(){
 		teleporter = GameObject.Find ("teleporter");
 		teleporter.SetActive (false);
+        UICanvas = GameObject.Find("Canvas");
 
 	}
 }

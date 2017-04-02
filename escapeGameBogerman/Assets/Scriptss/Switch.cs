@@ -9,6 +9,8 @@ public class Switch : MonoBehaviour {
 	public Behaviour halo;
 	public bool schakelaar;
 	public GameObject LightSwitch;
+    public GameObject TextTest;
+    public bool UITime;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +19,8 @@ public class Switch : MonoBehaviour {
 		light = GameObject.FindGameObjectsWithTag ("Lighting");
 		LightSwitch = GameObject.Find ("LightSwitch");
 		LightSwitch.SetActive (false);
+        TextTest = GameObject.Find("TextTest");
+        UITime = false;
 	}
 	
 	// Update is called once per frame
@@ -31,7 +35,9 @@ public class Switch : MonoBehaviour {
 			if(Physics.Raycast(ray, out hit, 2)) {
 				Switch1 p = hit.collider.GetComponent<Switch1>();
 			if (p != null) {
-				LightSwitch.SetActive (true);
+                UITime = true;
+                TextTest.GetComponent<Animator>().SetBool("fadeStatus", true);
+                LightSwitch.SetActive (true);
 				if (Input.GetKeyDown (KeyCode.E)) {
 					if (schakelaar == true) {
 						schakelaar = false;
@@ -51,8 +57,13 @@ public class Switch : MonoBehaviour {
 					}
 				}
 			} else {
-				LightSwitch.SetActive (false);
-			}
-		}
+                if (UITime == true)
+                {
+                    TextTest.GetComponent<Animator>().SetBool("fadeStatus", false);
+                    LightSwitch.SetActive(false);
+                    UITime = false;
+                }
+            }
+        }
 	}
 }

@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: clean window
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 1
   m_CustomRenderQueue: 3000
@@ -152,10 +152,10 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+      second: {r: 0.3970588, g: 0.5476673, b: 0.7941176, a: 0.559}
     - first:
         name: _EmissionColor
       second: {r: 0.0060553695, g: 0.022646489, b: 0.029411793, a: 1}
     - first:
         name: _SpecColor
-      second: {r: 0.1921569, g: 0.33858216, b: 0.47450984, a: 0.503}
+      second: {r: 0.1921569, g: 0.33858216, b: 0.47450984, a: 0.616}
